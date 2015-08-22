@@ -24,14 +24,29 @@ For each record in the dataset it is provided:
 - An identifier of the subject who carried out the experiment.
 
 ##### Step 1. Merges the training and the test sets to create one data set
+Sets the source directory for the files and reads into tables the data located in
+- features.txt
+- activity_labels.txt
+- subject_train.txt
+- x_train.txt
+- y_train.txt
+- subject_test.txt
+- x_test.txt
+- y_test.txt
+
+Assigns column names and merges to create one data set.
 
 ##### Step 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+Uses grep pattern matching and replacement function to extract only the information from columns regarding the standard deviation and mean
 
 ##### Step 3. Uses descriptive activity names to name the activities in the data set
+Merges and labels the dataset with subject, activity, variable called featureswanted
 
 ##### Step 4. Appropriately label the data set with descriptive activity names.
+Uses the gsub function to label the data properly through a variable featureswanted
 
 ##### Step 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+We produce only a data set with the average of each variable for each activity and subject using a melt and dcast functions
 
 ### Activity Labels
 
